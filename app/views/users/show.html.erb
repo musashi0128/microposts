@@ -1,4 +1,6 @@
 <h1>
     <%= gravatar_for @user %>
     <%= @user.name %>
+    <br />
+    <%= link_to "[Profile Edit]", edit_user_path(current_user) %>
 </h1>

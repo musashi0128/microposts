@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   #課題1追加場所
-  validates :profile, presence: true, length: { maximum: 255 }
   validates :area, presence: true, length: { maximum: 50 }
   has_secure_password
 end

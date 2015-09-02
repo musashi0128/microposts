@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
   
   def show
-    @user = User.find(params[:id])
   end
   
   def new
@@ -19,6 +19,9 @@ class UsersController < ApplicationController
   end
   
   #課題追加場所
+  def edit
+  end
+  
   def update
     if @user.update(user_params)
       # 保存に成功した場合はユーザーページへリダイレクト
@@ -29,14 +32,15 @@ class UsersController < ApplicationController
     end
   end
   
-  def edit
-    @user = User.find(params[:id])
-  end
   #課題追加場所ここまで
   
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end  
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :area)
+  end
+  
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
