@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :logged_in_user, only: [:following, :followers]
   
   def show
     @microposts = @user.microposts
@@ -31,6 +32,18 @@ class UsersController < ApplicationController
       #保存に失敗した場合は編集画面へ戻す
       render 'edit'
     end
+  end
+  
+  def followings
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @following_users = @user.following_users
+  end
+  
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @follower_users = @user.follower_users
   end
   
   #課題追加場所ここまで
