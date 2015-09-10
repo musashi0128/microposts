@@ -1,4 +1,4 @@
 <li class="clearfix">
-    <%= link_to user.name, user_path(user) %><br>
-    <%= gravatar_for(user) %>
+  <%= gravatar_for user, size: 52 %>
+  <%= link_to user.name, user %>
 </li>

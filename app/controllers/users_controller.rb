@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :logged_in_user, only: [:following, :followers]
+  before_action :logged_in_user, only: [:index, :following, :followers]
   
   def show
     @microposts = @user.microposts
@@ -46,6 +46,13 @@ class UsersController < ApplicationController
     @follower_users = @user.follower_users
   end
   
+  def index
+    @users = User.paginate(page: params[:page])
+  end
+  
+  def feed
+    Micropost.from_users_followed_by(self)
+  end
   #課題追加場所ここまで
   
   private
