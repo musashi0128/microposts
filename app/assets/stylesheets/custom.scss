@@ -133,8 +133,27 @@ aside {
     }
   }
 }
-
-
+ 
+ /* sidebar - custom  */
+ strong.s-blr {
+   padding-left: 5px;
+   padding-right: 5px;
+   border-left: 1px solid #ccc;
+   border-right: 1px solid #ccc;
+ }
+ 
+  strong.s-bl {
+   padding-left: 5px;
+   margin-right: 5px;
+   border-left: 1px solid #ccc;
+ }
+ strong.s-br {
+   padding-left: 5px;
+   padding-right: 5px;
+   border-left: 1px solid #ccc;
+   border-right: 1px solid #ccc;
+ }
+ 
 .gravatar {
   float: left;
   margin-right: 10px;

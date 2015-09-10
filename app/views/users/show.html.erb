@@ -11,12 +11,12 @@
         </section>
                 Profile: <%= @user.profile %><br/>
                 Area: <%= @user.area %><br /><br />
-                <% if logged_in? %>
-                    <%= link_to "[Profile Edit]", edit_user_path(current_user) %>
-                <% end %><br /><br />
                 
-                <%= link_to "Follower", followers_user_path(@user) %><br/>
-                <%= link_to "Follow", followings_user_path(@user) %>
+                <% if logged_in? %>
+                    <strong class="s-blr"><%= link_to "Profile Edit", edit_user_path(current_user) %></strong>
+                <% end %><br /><br />
+                <strong class="s-bl"><%= link_to "Follower", followers_user_path(@user) %> (<%= @user.follower_users.count %>)</strong>
+                <strong class="s-br"><%= link_to "Follow", followings_user_path(@user) %> (<%= @user.following_users.count %>)</strong>
                 
     </aside>
     <div class="col-md-8">
