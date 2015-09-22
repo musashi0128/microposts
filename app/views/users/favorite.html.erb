@@ -1,0 +1,18 @@
+
+<div class="row">
+    <aside class="col-md-4">
+        <sectio class="user_info">
+            <%= render 'shared/user_info_favo' %>
+        </section>
+        <%= link_to "Follower", followers_user_path(current_user) %><br />
+        <%= link_to "Follow", followings_user_path(current_user) %><br />
+        <%= link_to "Favorite", favorites_user_path(current_user) %>
+    </aside>
+    
+    <div class="col-md-8">
+      <h3>Favorites Feed</h3>
+          <ol class="microposts">
+            <%= render 'shared/feed' %>
+          </ol>
+    </div>
+</div>

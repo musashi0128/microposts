@@ -16,8 +16,8 @@
                     <strong class="s-blr"><%= link_to "Profile Edit", edit_user_path(current_user) %></strong>
                 <% end %><br /><br />
                 <strong class="s-bl"><%= link_to "Follower", followers_user_path(@user) %> (<%= @user.follower_users.count %>)</strong>
-                <strong class="s-br"><%= link_to "Follow", followings_user_path(@user) %> (<%= @user.following_users.count %>)</strong>
-                
+                <strong class="s-blr"><%= link_to "Follow", followings_user_path(@user) %> (<%= @user.following_users.count %>)</strong>
+                <strong class="s-br"><%= link_to "Favorite", favorites_user_path(@user) %></strong>
     </aside>
     <div class="col-md-8">
         <%= render 'follow_form' if logged_in? %>

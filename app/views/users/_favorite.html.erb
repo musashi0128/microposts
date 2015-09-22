@@ -1,4 +1,5 @@
-<%= form_for(current_user.favorite_microposts.build, remote: true) do |f| %>
- <div><%= hidden_field_tag :micropost_id, @micropost.id %></div>
+<%= form_for(current_user.favoriteships.build, remote: true) do |f| %>
+ <div><%= hidden_field_tag :user_id, current_user.id %></div>
+  <div><%= hidden_field_tag :micropost_id, @feed_item.id %></div>
  <%= f.submit "Favorite", class: "btn btn-primary" %>
 <% end %>

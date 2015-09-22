@@ -1,9 +1,8 @@
-<% if current_user != @user %>
- <div id="favorite_form">
- <% if current_user.favorite?(@user) %>
+<% @feed_item = feed_item %>
+ <div id="favorite_form-<%= @feed_item.id %>">
+ <% if current_user.favorite?(@feed_item) %>
    <%= render 'users/unfavorite' %>
  <% else %>
    <%= render 'users/favorite' %>
  <% end %>
  </div>
-<% end %>

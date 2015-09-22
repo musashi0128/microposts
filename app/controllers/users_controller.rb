@@ -46,6 +46,10 @@ class UsersController < ApplicationController
     @follower_users = @user.follower_users
   end
   
+  def favorite
+    @feed_items = current_user.favorited_posts.page(params[:page])
+  end
+  
   def index
     @users = User.paginate(page: params[:page])
   end

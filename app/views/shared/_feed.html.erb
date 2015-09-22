@@ -1,5 +1,14 @@
 <% if @feed_items.any? %>
   <ol class="microposts">
-      <%= render @feed_items %>
+      <% @feed_items.each do |feed_item| %>
+      <li id="micropost-<%= feed_item.id %>">
+          <%= link_to gravatar_for(feed_item.user, size: 50), feed_item.user %>
+        <span class="user"><%= link_to feed_item.user.name, feed_item.user %></span>
+        <span class="content"><%= feed_item.content %></span>
+        <span class="timestamp">Posted <%= feed_item.created_at %></span>
+        <%= link_to 'delete', feed_item, method: :delete, :confirm => 'You sure delete?' %>
+        <%= render 'users/favorite_form', feed_item: feed_item %>
+      </li>
+    <% end %>
   </ol>
 <% end %>

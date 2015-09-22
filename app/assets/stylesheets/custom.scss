@@ -157,10 +157,15 @@ aside {
    margin-right: 5px;
    border-left: 1px solid #ccc;
  }
- strong.s-br {
+ strong.s-blr {
    padding-left: 5px;
    padding-right: 5px;
    border-left: 1px solid #ccc;
+   border-right: 1px solid #ccc;
+ }
+ strong.s-br {
+   padding-left: 5px;
+   padding-right: 5px;
    border-right: 1px solid #ccc;
  }
  
