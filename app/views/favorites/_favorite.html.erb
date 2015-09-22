@@ -1,5 +1,0 @@
-<% if micropost.favorite_for current_user %>
-  <%= link_to "Favorite", favorite_micropost_path(micropost), class: 'btn btn-xs btn-warning' %>
-<% else %>
-  <%= link_to "UnFavorite", unfavorite_micropost_path(micropost), class: 'btn btn-xs btn-default' %>
-<% end %>
