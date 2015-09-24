@@ -47,7 +47,8 @@ class UsersController < ApplicationController
   end
   
   def favorite
-    @feed_items = current_user.favorited_posts.page(params[:page])
+    @user  = User.find(params[:id])
+    @feed_items = @user.favorited_posts.page(params[:page])
   end
   
   def index

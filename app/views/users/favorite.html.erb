@@ -1,12 +1,18 @@
-
+<% provide(:title, @user.name) %>
 <div class="row">
     <aside class="col-md-4">
         <sectio class="user_info">
-            <%= render 'shared/user_info_favo' %>
+            <h1>
+                <%= gravatar_for @user %>
+            </h1>
+              <h3>
+                <%= @user.name %>
+              </h3>
         </section>
-        <%= link_to "Follower", followers_user_path(current_user) %><br />
-        <%= link_to "Follow", followings_user_path(current_user) %><br />
-        <%= link_to "Favorite", favorites_user_path(current_user) %>
+                
+                <%= link_to "Follower", followers_user_path(@user) %><br/>
+                <%= link_to "Follow", followings_user_path(@user) %><br />
+                <%= link_to "Favorite", favorites_user_path(@user) %>
     </aside>
     
     <div class="col-md-8">
