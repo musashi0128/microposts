@@ -16,9 +16,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'faker'
+gem 'will_paginate'
+gem 'turbolinks'
+
 gem 'bootstrap-will_paginate', '0.0.10'
-gem 'will_paginate', '3.0.7'
-gem 'faker', '1.0.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,19 +1,22 @@
-<h1>Log In</h1>
-
-<div class="row">
-   <div class="col-md-6 col-md-offset-3">
-     <%= form_for(:session, url: login_path) do |f| %>
-
-       <%= f.label :email %>
-       <%= f.email_field :email, class: 'form-control' %>
-
-       <%= f.label :password %>
-       <%= f.password_field :password, class: 'form-control' %>
-
-       <%= f.submit "Log in", class: "btn btn-primary" %>
-     <% end %>
-     <br />
-
-     <p><%= link_to "Sign up Now!", signup_path, class: "btn btn-large btn-primary" %></p>
+<% provide(:title, 'Log in') %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 right-content">
+      <%= form_for(:session, url: login_path) do |f| %>
+      <h3>ログイン</h3>
+      <div class="form-group">
+        <%= f.label :email,"メールアドレス: sample@exsample.com" %>
+        <%= f.text_field :email, class: "form-control" %>
+	    </div>
+      <div class="form-group">
+        <%= f.label :password, "パスワード: 6文字以上" %>
+        <%= f.password_field :password, class: "form-control" %>
+	    </div>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>パスワードを保存する</span>
+      <% end %>
+      <%= f.submit "ログイン", class: "btn btn-success" %>
+      <p><%= link_to "New User Create?", signup_path %></p>
+      <% end %>
     </div>
-</div>
+  </div>

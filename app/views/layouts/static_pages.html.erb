@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Microposts</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+
+<% if logged_in? %>
+<body>
+  <%= render 'layouts/header' %>
+  
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+    <%= yield %>
+    <%= render 'static_pages/footer' %>
+  </div>
+  <div class="clear"></div>
+</body>
+</html>
+
+<% else %>
+
+<body id="registrations">
+  <div class="container">
+    <%= yield %>
+    <%= render 'static_pages/footer' %>
+  </div>
+  <div class="clear"></div>
+</body>
+</html>
+
+<% end %>

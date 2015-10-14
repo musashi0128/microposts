@@ -1,8 +1,13 @@
+<% provide(:title, 'Home') %>
+
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
         <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
       </section>
       <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
@@ -13,10 +18,32 @@
       <%= render 'shared/feed' %>
     </div>
   </div>
+  
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Microposts!!</h1>
 
-    <%= link_to "Sign up Now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12 left-content">
+    <h1>Microposts</h1>
+    <p class="ex">
+      このサイトは<a href="http://www.railstutorial.org/" title="Ruby on Rails Tutorial" target="_blank"> Rails Tutorial </a>のTwitterクローンアプリです
+    </p>
+    <p class="ex">
+      参考サイト:<a href="https://techacademy.jp/" title="テックアカデミー" target="_blank">TechAcademy</a>
+    </p>
+	  <p class="by">Twitter:<a href="https://twitter.com/musashiiiii" title="宮本一彦のTwitter" target="_blank"> @musashiiiii</a></p>
+    <p class="by">Facebook:<a href="https://www.facebook.com/musashi0128" title="宮本一彦のFacebook" target="_blank"> KazuhikoMiyamoto</a></p>
   </div>
+		
+  <div class="col-md-6 col-sm-6 col-xs-12 right-content">
+    <div class="form-mode">
+      <div class="form-group">
+        <p class="control-label">会員登録する</p>
+        <%= link_to "Create New User", signup_path, class: "btn btn-lg btn-primary" %>
+      </div>
+        <p class="control-label">ログインする</p>
+        <%= link_to "Login for User", login_path, class: "btn btn-lg btn-success" %>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>

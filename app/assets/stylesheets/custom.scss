@@ -60,6 +60,10 @@ p {
   line-height: 1.7em;
 }
 
+.clear {
+  clear: both;
+}
+
 /* header */
 
 #logo {
@@ -116,6 +120,46 @@ input {
   }
 }
 
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.right-content {
+  padding: 0px 45px;
+  form {
+    background-color: rgba(50, 50, 50, 0.1);
+    margin: 45px 0px;
+    padding: 30px 35px;
+    border: 1px solid #888888;
+    border-radius: 6px;
+    h3 {
+      margin: 0px 0px 20px 0px;
+      border-bottom: 1px solid #888888;
+      padding-bottom: 10px;
+      font-size: 20px;
+      text-align: left;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+  }
+}
+
+
 /* sidebar */
 
 aside {
@@ -142,6 +186,44 @@ aside {
       margin-top: 0px;
     }
   }
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }
  
  /* sidebar - custom  */
@@ -234,5 +316,20 @@ span.picture {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding: 20px;
+  border-top: 1px solid #e7e7e7;
+  color: #bebebe;
+  .footer-wraper {
+    text-align: center;
+    .s-footer {
+      font-size: 12px;
+    }
   }
 }

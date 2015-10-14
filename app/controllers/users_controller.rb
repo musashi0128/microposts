@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :logged_in_user, only: [:index, :following, :followers]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   
   def show
     @microposts = @user.microposts
@@ -37,19 +37,17 @@ class UsersController < ApplicationController
   def followings
     @title = "Following"
     @user  = User.find(params[:id])
-    @following_users = @user.following_users
+    @users = @user.following_users
+    render 'show_follow'
   end
   
   def followers
     @title = "Followers"
     @user  = User.find(params[:id])
-    @follower_users = @user.follower_users
+    @users = @user.follower_users
+    render 'show_follow'
   end
   
-  def favorite
-    @user  = User.find(params[:id])
-    @feed_items = @user.favorited_posts.page(params[:page])
-  end
   
   def index
     @users = User.paginate(page: params[:page])

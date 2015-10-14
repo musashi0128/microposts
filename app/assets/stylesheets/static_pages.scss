@@ -1,0 +1,90 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+html, body {
+  width: 100%;
+	height: 100%;
+}
+	 
+#registrations {
+  background-image: asset-url("back.jpg");
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-color: #050911;
+  .row {
+    .left-content {
+      margin-top: 45px;
+      padding: 0px 45px;
+      color: #fff;
+      float: left;
+      h1 {
+        font-size: 50px;
+        margin: 0px;
+        margin-top: 10px;
+        text-align: left;
+      }
+      .ex {
+        font-size: 18px;
+        margin: 45px 0px;
+      }
+    }
+    .right-content {
+      float: right;
+      padding: 0px 45px;
+      .form-mode {
+        margin: 45px 0px;
+        padding: 30px 35px;
+        border: 1px solid #fff;
+        border-radius: 6px;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        .form-group {
+          margin-bottom: 20px;
+        }
+        .control-label {
+          font-weight: 400;
+          margin: 0px 0px 5px 0px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+          padding-bottom: 10px;
+          font-size: 16px;
+        }
+        .btn {
+          width: 100%;
+          padding: 15px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding: 20px;
+  border-top: 1px solid #e7e7e7;
+  color: #bebebe;
+  .footer-wraper {
+    text-align: center;
+    .s-footer {
+      font-size: 12px;
+    }
+  }
+}

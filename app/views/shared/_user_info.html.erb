@@ -2,6 +2,3 @@
 <h1><%= current_user.name %></h1>
 <span><%= link_to "view my profile", current_user %></span>
 <span><%= pluralize(current_user.microposts.count, "micropost") %></span><br />
-<strong class="s-bl"><%= link_to "Follower", followers_user_path(current_user) %> (<%= @current_user.follower_users.count %>)</strong>
-<strong class="s-blr"><%= link_to "Follow", followings_user_path(current_user) %> (<%= @current_user.following_users.count %>)</strong>
-<strong class="s-br"><%= link_to "Favorite", favorites_user_path(current_user) %></strong>
