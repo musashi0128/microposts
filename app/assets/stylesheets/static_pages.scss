@@ -14,12 +14,9 @@ html, body {
 }
 	 
 #registrations {
-  background-image: image-url("back.jpg");
-  background-position: center;
-  background-size: cover;
-  background-color: transparent;
-  background-repeat: no-repeat;
   background-color: #050911;
+  background: image-url("back.jpg") center center no-repeat;
+  background-size: cover;
   .row {
     .left-content {
       margin-top: 45px;
