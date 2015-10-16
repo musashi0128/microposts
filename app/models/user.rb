@@ -25,6 +25,17 @@ class User < ActiveRecord::Base
                                     dependent:   :destroy
   has_many :follower_users, through: :follower_relationships, source: :follower
   
+  # お気に入り登録
+  has_many :favoriteships,  class_name: "Favoriteship",
+                            foreign_key: "user_id", 
+                            dependent: :destroy
+  has_many :favorited_microposts, through: :favoriteships, source: :micropost
+  
+  
+  has_many :retweetships,   foreign_key: "user_id", 
+                            dependent: :destroy
+  has_many :retweeted_posts, through: :retweetships, source: :micropost
+  
 
   
   # 他のユーザーをフォローする
@@ -40,6 +51,19 @@ class User < ActiveRecord::Base
   # あるユーザーをフォローしているかどうか？
   def following?(other_user)
     following_users.include?(other_user)
+  end
+  
+  # お気に入りする
+  def favorite(micropost)
+    favoriteships.find_or_create_by(micropost_id: micropost.id)
+  end
+  # お気に入りを解除する
+  def unfavorite(micropost)
+    favoriteships.find_by(micropost_id: micropost.id).destroy
+  end
+  # お気に入りにしているか？
+  def favorite?(micropost)
+    favorited_microposts.include?(micropost)
   end
   
   def feed_items

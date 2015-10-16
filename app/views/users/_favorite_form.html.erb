@@ -1,6 +1,8 @@
-
- <% if current_user.favorite?(micropost) %>
-    <%= render 'users/unfavorite', micropost: micropost%>
-<% else %>
-    <%= render 'users/favorite', micropost: micropost %>
-<% end %>
+<% @feed_item = feed_item %>
+ <div id="favorite_form-<%= @feed_item.id %>">
+ <% if current_user.favorite?(@feed_item) %>
+   <%= render 'users/unfavorite' %>
+ <% else %>
+   <%= render 'users/favorite' %>
+ <% end %>
+ </div>

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   
   def show
     @microposts = @user.microposts
+    #@name = '@' + @user.name
   end
   
   def new
@@ -48,6 +49,12 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
   
+  def favorite
+    @title = "Favorites"
+    @user  = User.find(params[:id])
+    @feed_items = @user.favorited_microposts.page(params[:page])
+    render 'show_favorite'
+  end
   
   def index
     @users = User.paginate(page: params[:page])

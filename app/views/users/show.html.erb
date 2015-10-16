@@ -2,10 +2,8 @@
 <div class="row">
     <aside class="col-md-4">
         <section>
-          <h1>
-            <%= gravatar_for @user %>
-            <%= @user.name %>
-          </h1>
+          <%= link_to gravatar_for(@user, size: 100), @user %>
+          <h1><%= link_to @user.name, @user %></h1>
         </section>
         <section class="stats">
           <%= render 'shared/stats' %>

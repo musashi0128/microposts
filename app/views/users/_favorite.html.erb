@@ -1,3 +1,7 @@
-<%= link_to favorites_path(favorite_id: favorite.id), remote: true, method: :post, class: 'favorite-link' do %>
-  <i class="fa fa-star unfavorite-star"></i>
+<%= form_for(current_user.favoriteships.build, remote: true) do |f| %>
+ <div><%= hidden_field_tag :user_id, current_user.id %></div>
+  <div><%= hidden_field_tag :micropost_id, @feed_item.id %></div>
+ <%= button_tag( class: "btn btn-default btn-sm") do %>
+  <%= content_tag :span, "favorite", class: "glyphicon glyphicon-star" %>
+ <% end %>
 <% end %>
