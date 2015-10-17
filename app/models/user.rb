@@ -32,9 +32,10 @@ class User < ActiveRecord::Base
   has_many :favorited_microposts, through: :favoriteships, source: :micropost
   
   
-  has_many :retweetships,   foreign_key: "user_id", 
+  has_many :retweetships,   class_name: "Retweetship",
+                            foreign_key: "user_id", 
                             dependent: :destroy
-  has_many :retweeted_posts, through: :retweetships, source: :micropost
+  has_many :retweeted_microposts, through: :retweetships, source: :micropost
   
 
   
@@ -64,6 +65,18 @@ class User < ActiveRecord::Base
   # お気に入りにしているか？
   def favorite?(micropost)
     favorited_microposts.include?(micropost)
+  end
+  
+  def retweet(micropost)
+    retweetships.find_or_create_by(micropost_id: micropost.id)
+  end
+  
+  def unretweet(micropost)
+    retweetships.find_by(micropost_id: micropost.id).destroy
+  end
+  
+  def retweet?(micropost)
+    retweeted_microposts.include?(micropost)
   end
   
   def feed_items

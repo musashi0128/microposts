@@ -14,6 +14,7 @@
            <%= link_to "delete", feed_item, method: :delete, data: { confirm: "You sure?" } %>
           <% end %>
           <%= render 'users/favorite_form', feed_item: feed_item %>
+          <%= render 'users/retweet_form', feed_item: feed_item %>
         </span>
       </li>
     <% end %>

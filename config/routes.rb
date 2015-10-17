@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :favoriteships, only: [:create, :destroy]
+  resources :retweetships, only: [:create, :destroy]
   resources :microposts, only: [:create, :destroy]
 end

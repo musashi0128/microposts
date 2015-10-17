@@ -1,0 +1,8 @@
+<% @feed_item = feed_item %>
+<div id="retweet_form-<%= @feed_item.id %>">
+  <% if current_user.retweet?(@feed_item) %>
+    <%= render 'users/unretweet' %>
+  <% else %>
+    <%= render 'users/retweet' %>
+  <% end %>
+</div>
